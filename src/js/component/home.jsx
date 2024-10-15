@@ -37,55 +37,55 @@ const Home = () => {
   ];
   return (
     <div style = {{width: "100%", height: "100%"}}>
-    <nav className="navbar bg-dark"  style = {{width: "100%", padding: "10px 94px 10px 105px"}}>
+      <nav className="navbar navbar-expand-lg bg-dark navbar-dark"  style = {{width: "100%", padding: "10px 94px 10px 105px"}}>
         <div className="container-fluid">
-          
-        <a className="navbar-brand" href="#"> 
-          <span  style = {{width: "30", height: "24"}} className="d-inline-block align-text-top text-light">
-          Start Bootstrap
+          <a className="navbar-brand" href="#"> 
+            <span  style = {{width: "30", height: "24"}} className="d-inline-block align-text-top text-light">
+              Start Bootstrap
             </span>
-        </a>
-        <ul className="nav justify-content-end">
-        <li className="nav-item">
-          <a className="nav-link active text-light" aria-current="page" href="#">Home</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link text-secondary" href="#">About</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link text-secondary" href="#">Services</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link text-secondary" href="#">Contact</a>
-        </li>
-      </ul>
-      </div>
+            </a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul className="nav">
+            <li className="nav-item">
+              <a className="nav-link active text-light" aria-current="page" href="#">Home</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-secondary" href="#">About</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-secondary" href="#">Services</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link text-secondary" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+        </div>
       </nav>
       <div className="container">
-      <div className="bg-light p-5 rounded-lg">
-      <h1 className="display-4 fw-bold">A Warm Welcome!</h1>
-      <p className="lead text-dark">Lorem ipsum dolor sit amet consectetur adipiscing elit sapien nullam, sollicitudin tristique ligula fringilla porta libero viverra dapibus eleifend, ut eros suspendisse faucibus hac varius ante hendrerit.</p>
-      <a className="btn btn-primary btn-lg" href="#" role="button">Call to action!</a>
+        <div className="bg-light p-5 rounded-lg">
+          <h1 className="display-4 fw-bold">A Warm Welcome!</h1>
+          <p className="lead text-dark">Lorem ipsum dolor sit amet consectetur adipiscing elit sapien nullam, sollicitudin tristique ligula fringilla porta libero viverra dapibus eleifend, ut eros suspendisse faucibus hac varius ante hendrerit.</p>
+          <a className="btn btn-primary btn-lg" href="#" role="button">Call to action!</a>
         </div>
-    <div className="py-3 text-center d-flex gap-5 ">
-      {values.map((postcard) => {
-        return (
-          <Card
-            title={postcard.title}
-            content={postcard.content}
-            image={postcard.image}
-          />
-        );
-      })}
-          </div>
+        <div className="row my-4">
+          {values.map((postcard, index) => (
+            <div className="col-md-3 d-flex justify-content-center" key={index}>
+              <Card title={postcard.title} content={postcard.content} image={postcard.image} />
+            </div>
+          ))}
+        </div>
       </div>
-      <footer>
-    <div className="row bg-dark">
-        <div className="col-lg-12">
-            <p className="text-light text-center"style = {{paddingTop: "70px"}}>Copyright &copy; Your Website 2019</p>
+      <footer className="fixed-bottom">
+        <div className="row bg-dark">
+          <div className="col-lg-12">
+            <p className="text-light text-center"style = {{paddingTop: "65px"}}>Copyright &copy; Your Website 2019</p>
+          </div>
         </div>
-    </div>
-</footer>
+      </footer>
     </div>
   );
 };
